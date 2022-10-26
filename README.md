@@ -3,3 +3,6 @@
 
 # SQL_query
 Esse repositório tem como objetivo compartilhar códigos em SQL que usei para praticar meus conhecimentos na linguagem.
+Aqui compartilho os mais variados tipos de datasets, em sua maioria com mais de uma tabela para ser possível treinar comandos JOINS.
+
+Todos os datasets utilizados são de uso públicos e obtidos através de sites como Kaggle e UCI.
