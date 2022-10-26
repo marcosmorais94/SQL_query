@@ -1,0 +1,23 @@
+# Consulta relacionada a um dataset contendo informações das ordens de serviços de uma pizzaria
+# Fonte do dataset: 
+# https://www.kaggle.com/datasets/mysarahmadbhat/pizza-place-sales
+
+# Resumo do dataset
+# Contém um ano de vendas de uma pizzaria ficticia, incluindo data e tempo de entrega para cada pizza vendida
+# Possui detalhes adicionais sobre o tipo, tamanho, quantidade, preço e igredientes.
+
+# Principais tipos de pizza do cardápio
+# O principal tipo de pizza no cardápio é o Supreme e Veggie (Vegano) com 9 itens cada
+SELECT category, COUNT(CATEGORY) AS Quantidade
+FROM pizza_data.pizza_types
+GROUP BY category
+ORDER BY quantidade DESC;
+
+# Preço médio da pizza por tipo
+# Apesar dos diferentes tipos, vemos que as pizzas tem um preço médio parecido entre si
+SELECT C.category,  ROUND(AVG(P.price), 2) AS Preco_Medio
+FROM pizza_data.pizza_types AS C
+LEFT OUTER JOIN pizza_data.pizzas AS P
+on C.pizza_type_id = P.pizza_type_id
+GROUP BY category
+ORDER BY Preco_Medio DESC;
