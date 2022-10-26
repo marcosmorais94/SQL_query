@@ -21,3 +21,10 @@ LEFT OUTER JOIN pizza_data.pizzas AS P
 on C.pizza_type_id = P.pizza_type_id
 GROUP BY category
 ORDER BY Preco_Medio DESC;
+
+# Preço Médio por tamanho da pizza
+# O tamanho XXL possui a maior média de preços dentre todas as pizzas disponíveis no cardápio, o que já era esperado
+SELECT size, ROUND(AVG(price),2) AS Preco_Medio
+FROM pizza_data.pizzas
+GROUP BY size
+ORDER BY Preco_Medio DESC;
